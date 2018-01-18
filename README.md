@@ -7,7 +7,7 @@ example integration](https://facebook.github.io/jest/docs/en/puppeteer.html).
 ## Usage
 
 ```bash
-npm install jest maxnewlands/whistleblower
+npm install jest firstlookmedia/whistleblower
 ```
 (Using Yarn to install Jest threw errors when I tried to run it, possibly due
 to my having other Jest versions installed in `node_modules`.)
