@@ -6,7 +6,7 @@ example](https://facebook.github.io/jest/docs/en/puppeteer.html).
 ## Usage
 
 ```bash
-yarn add jest
+npm install jest
 ```
 
 (TBD: install whistleblower)
