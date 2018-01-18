@@ -10,7 +10,7 @@ example integration](https://facebook.github.io/jest/docs/en/puppeteer.html).
 npm install jest maxnewlands/whistleblower
 ```
 (Using Yarn to install Jest threw errors when I tried to run it, possibly due
-to my having multiple different versions installed in `node_modules`.)
+to my having other Jest versions installed in `node_modules`.)
 
 Point to Whistleblower's utils in your [jest.config.js
 file](https://facebook.github.io/jest/docs/en/configuration.html):
