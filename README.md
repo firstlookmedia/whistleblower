@@ -9,9 +9,9 @@ example integration](https://facebook.github.io/jest/docs/en/puppeteer.html).
 Install with `npm install firstlookmedia/whistleblower` or `yarn add
 firstlookmedia/whistleblower`.
 
-Create a [jest.config.js
+Create a [Jest config
 file](https://facebook.github.io/jest/docs/en/configuration.html) that points to
-Whistleblower's utils:
+Whistleblower's utils. This may also include other Jest config options.
 ```javascript
 module.exports = {
   globalSetup: 'whistleblower/setup',
@@ -22,15 +22,12 @@ module.exports = {
 
 To run tests from the command line:
 1. Supply the process with a hostname where your tests will run.
-2. Use Whistleblower's installation of Jest (using a top-level or global Jest
-   install can cause [problems when other Jest versions are
-   present](https://stackoverflow.com/questions/43837596/projects-map-is-not-a-function-for-jest-cli)).
-3. Pass Jest the path of your config file, along with any other [Jest
-   options](https://facebook.github.io/jest/docs/en/cli.html).
+2. Pass Jest the path of your config file, along with any other [Jest
+   CLI options](https://facebook.github.io/jest/docs/en/cli.html).
 
 For example:
 ```bash
-HOSTNAME=www.example.com ./node_modules/whistleblower/node_modules/.bin/jest --config=path/to/your/jest.config.js
+HOSTNAME=www.example.com ./node_modules/.bin/whistleblower --config=path/to/your/config.js
 ```
 
 In your test files, access the hostname you provided and a Puppeteer browser
