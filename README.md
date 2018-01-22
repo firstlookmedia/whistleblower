@@ -21,8 +21,9 @@ module.exports = {
 ```
 
 To run tests from the command line:
-1. Supply the process with a hostname where your tests will run.
-2. Pass Jest the path of your config file, along with any other [Jest
+1. Supply the process with a `HOSTNAME` environment variable, where your tests
+   will run.
+2. Pass Whistleblower the path of your config file, along with any other [Jest
    CLI options](https://facebook.github.io/jest/docs/en/cli.html).
 
 For example:
@@ -34,7 +35,7 @@ In your test files, access the hostname you provided and a Puppeteer browser
 instance on the `global` object, e.g.:
 ```javascript
 describe('Homepage', () => {
-  it('returns 200', async () => {
+  test('returns 200', async () => {
     const page = await global.__BROWSER__.newPage();
     const response = await page.goto(`https://${global.__HOSTNAME__}`);
     expect(response.status).toBe(200);
