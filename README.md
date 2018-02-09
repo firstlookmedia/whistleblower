@@ -6,6 +6,8 @@ example integration](https://facebook.github.io/jest/docs/en/puppeteer.html).
 
 ## Usage
 
+Requires Node v7.6.0 or later.
+
 Install with `npm install firstlookmedia/whistleblower` or `yarn add
 firstlookmedia/whistleblower`.
 
