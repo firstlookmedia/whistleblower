@@ -6,7 +6,7 @@ example integration](https://facebook.github.io/jest/docs/en/puppeteer.html).
 
 ## Usage
 
-Requires Node v7.6.0 or later.
+Requires Node v7.6.0 or later (upgrade to latest stable version on command line with `n stable`).
 
 Install with `npm install firstlookmedia/whistleblower` or `yarn add
 firstlookmedia/whistleblower`.
@@ -42,5 +42,18 @@ describe('Homepage', () => {
     const response = await page.goto(`https://${global.__HOSTNAME__}`);
     expect(response.status).toBe(200);
   });
+});
+```
+
+###Common Errors
+`Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.`
+This is a frequent error that occurs when puppeteer takes too long to complete its procedures. Use the second argument in a `test` block to increase Jest's default timeout value of 5000ms as such:
+```javascript
+describe('Issue Page', () => {
+  test('returns 200', async () => {
+    const page = await global.__BROWSER__.newPage();
+    const response = await page.goto(`https://${global.__HOSTNAME__}/${issue.speakingId}`);
+    expect(response.status).toBe(200);
+  }, 20000);
 });
 ```
