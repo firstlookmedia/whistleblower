@@ -44,3 +44,16 @@ describe('Homepage', () => {
   });
 });
 ```
+
+###Common Errors
+`Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.`
+This is a frequent error that occurs when puppeteer takes too long to complete its procedures. Use the second argument in a `test` block to increase Jest's default timeout value of 5000ms as such:
+```javascript
+describe('Issue Page', () => {
+  test('returns 200', async () => {
+    const page = await global.__BROWSER__.newPage();
+    const response = await page.goto(`https://${global.__HOSTNAME__}/${issue.speakingId}`);
+    expect(response.status).toBe(200);
+  }, 20000);
+});
+```
