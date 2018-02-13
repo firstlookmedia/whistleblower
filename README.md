@@ -24,13 +24,16 @@ module.exports = {
 
 To run tests from the command line:
 1. Supply the process with a `HOSTNAME` environment variable, where your tests
-   will run.
+   will run (for auth, you may pass in `USER` and `PASSWORD` environment variables).
 2. Pass Whistleblower the path of your config file, along with any other [Jest
    CLI options](https://facebook.github.io/jest/docs/en/cli.html).
 
 For example:
 ```bash
 HOSTNAME=www.example.com ./node_modules/.bin/whistleblower --config=path/to/your/config.js
+```
+```bash
+HOSTNAME=www.example.com USER='username' PASSWORD='the password' ./node_modules/.bin/whistleblower --config=path/to/your/config.js
 ```
 
 In your test files, access the hostname you provided and a Puppeteer browser
