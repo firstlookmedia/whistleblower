@@ -23,7 +23,7 @@ class PuppeteerEnvironment extends NodeEnvironment {
 
     this.global.__HOSTNAME__ = process.env.HOSTNAME;
     this.global.__USER__ = process.env.USER;
-    this.global.__PASSWORD = process.env.PASSWORD;
+    this.global.__PASSWORD__ = process.env.PASSWORD;
   }
 
   async teardown() {
